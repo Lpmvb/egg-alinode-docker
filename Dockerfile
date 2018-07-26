@@ -15,8 +15,4 @@ RUN source $HOME/.bashrc \
     && tnvm install "alinode-v$ALINODE_VERSION" \
     && tnvm use "alinode-v$ALINODE_VERSION"
 
-ENV PATH="$TNVM_DIR/versions/alinode/v$ALINODE_VERSION/bin:$PATH"
-
-COPY docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
-
+SHELL ["/bin/bash", "-c", "-l"]
